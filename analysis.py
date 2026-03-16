@@ -105,7 +105,7 @@ def linear_regression_beliefs(activations, beliefs, component_ids):
             reg.fit(act[train_idx, t, :], target[train_idx, t, :])
             y_pred = reg.predict(act[test_idx, t, :])
             r2 = r2_score(target[test_idx, t, :], y_pred, multioutput='uniform_average')
-            r2_per_pos.append(r2)
+            r2_per_pos.append(max(r2, 0.0))
         results[name] = np.array(r2_per_pos)
 
     return results
