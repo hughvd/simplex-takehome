@@ -3,3 +3,4 @@ takehome.md
 coding_plan.md
 __pycache__/
 *.py[cod]
+.claude
